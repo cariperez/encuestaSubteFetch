@@ -15,7 +15,6 @@
     integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
     crossorigin=""></script>
     <link rel="stylesheet" href="style.css">
-    
     <title>Subte - Encuesta de satisfacción</title>
 </head>
 <body>
@@ -44,7 +43,7 @@
                 <ul>
                     <li>
                         <label for="id">ID:</label>
-                        <input type="number" id="id" name="user_id">
+                        <input type="number" id="id" name="user_id" selected disabled>
                     </li>
                     <li>
                         <label for="edad">Edad:</label>
@@ -56,7 +55,16 @@
                     </li>
                     <li>
                         <label for="linea">Línea en la que te encontrás:</label>
-                        <input type="text" id="linea" name="user_linea">
+                        <select id="linea" name="selectLinea">
+                            <option value="" selected disabled>...</option> -->
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                            <option value="5">E</option>
+                            <option value="6">H</option>
+                            <option value="7">Premetro</option>
+                            </select>
                     </li>
                     <li>
                         <label for="estacionOn">Estación en la que ingresaste:</label>
@@ -136,7 +144,7 @@
         <p>Para tener en cuenta: un viaje es el desplazamiento de un espacio geográfico a otro a través del uso de diferentes elementos que actúan como medios de transporte. Aunque combines varios modos de transporte durante tu desplazamiento, se considera un viaje. Si combinás varios modos de transporte, el traslado en cada uno de ellos se denomina "etapa"; son varias etapas dentro de un mismo viaje.</p>
         
         <p>6- ¿Cuántas veces por mes estimás que viajás en Subte? (Recordá que si vas y volvés en un día son dos viajes)</p>
-        <input type="text" id="preg6">
+        <input type="number" id="preg6" value="0" min="0">
 
         <p>7- Esquina más próxima al domicilio (calle 1):</p>
         <input type="text" name="" id="preg7">
@@ -158,34 +166,21 @@
         <div id="map"></div>
 
         <p>© Colaboradores de OpenStreetMap</p>
-                
+     
         <button class="btn-rtas fuente">Enviar respuestas</button>
 
     </section>
 
-    <span class="respuestas"></span>
+    <div class="botones">
+        <button class="btn-reiniciar fuente">Reiniciar</button>
+        <button class="btn-resumen fuente">Ver resumen respuestas</button>
+    </div>
 
-    <section class= "css-container fuente">
-        
-        <h3>Estadísticas:</h3>
-
-        <div class="loading">
-            <img src="./images/Loading_icon.gif" alt="Cargando resultados">            
-        </div>
-
-        <section class="estadisticas">
-                    
-        </section>
-
-    </section>
+    <div class="respuestas"></div>
 
     <footer>
         <h3 class="fuente textoFooter">¡Muchas gracias! Con tus respuestas, estás ayudando a la Ciudad a contar con un mejor servicio de Subte.</h3>
-
-        <div class="botones">
-            <button class="btn-resumen fuente">Ver respuestas</button>
-            <button class="btn-reiniciar fuente">Reiniciar</button>
-        </div>
+        <a class="verEstadisticas fuente" href="..sections/estadísticas.html">Ver estadísticas</a>
     </footer>
     
 </body>
